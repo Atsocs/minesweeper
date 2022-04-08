@@ -121,9 +121,9 @@ function Cell({ bg, bombs, status, hasBomb, over }) {
     >
       <Text fontSize="xl" fontWeight="bold" color={colors.text[bombs]}>
         {status === STATUS.revealed && !hasBomb && bombs !== 0 && bombs}
-        {isShowingBomb && <Bomb />}
-        {isShowingFlag && <Flag />}
       </Text>
+      {isShowingBomb && <Bomb />}
+      {isShowingFlag && <Flag />}
     </Center>
   );
 }
