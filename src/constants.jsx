@@ -26,6 +26,7 @@ export const colors = {
   },
   bomb: "black",
   flag: "red",
+  flagStick: "brown",
   head: "#4a752c",
   over: {
     won: "#0f0c",

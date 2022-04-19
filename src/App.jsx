@@ -1,6 +1,8 @@
 import {
+  Box,
   Button,
   Center,
+  Circle,
   HStack,
   SimpleGrid,
   Square,
@@ -10,8 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { useGame } from "./useGame";
 import { STATUS, colors } from "./constants";
-import Icon from "@mdi/react";
-import { mdiBomb, mdiFlag } from "@mdi/js";
 import handler from "./handler";
 
 export default function App() {
@@ -129,9 +129,29 @@ function Cell({ bg, bombs, status, hasBomb, over }) {
 }
 
 function Bomb() {
-  return <Icon path={mdiBomb} color={colors.bomb} />;
+  return <Circle bg={colors.bomb} size="60%" />;
 }
 
 function Flag() {
-  return <Icon path={mdiFlag} color={colors.flag} />;
+  return (
+    <Box w="100%" h="100%" pos="relative">
+      <Box
+        bg={colors.flag}
+        borderRightRadius="full"
+        w="50%"
+        h="35%"
+        pos="absolute"
+        left="35%"
+        top="15%"
+      />
+      <Box
+        w="10%"
+        h="70%"
+        bg={colors.flagStick}
+        pos="absolute"
+        left="25%"
+        top="15%"
+      />
+    </Box>
+  );
 }
